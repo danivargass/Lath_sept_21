@@ -1,0 +1,2198 @@
+var enable = true;
+
+var clipNameID = 'clip.name';
+var preApprovedCountriesID = 'catalog[pre_approved.countries]';
+var preAutorizedCountriesID = 'catalog[pre_autorized.countries]';
+var transcodeCatalogID = 'catalog[transcode.catalog]';
+var orderCatalogID = 'catalog[order.catalog]';
+var permittedCountriesID = 'permitted.countries';
+var checkuserisparticipantID = 'clip[checkuserisparticipant]';
+var preAutorizedID = 'pre-authorized';
+
+var assetApproversID = 'clip[asset.approvers]';
+var assetApprovalsID = 'clip[asset.approvals]';
+var assetApprovedID = 'clip[asset.approved]';
+var assetRejectionsID = 'clip[asset.rejections]';
+var approveID = 'clip[approve]';
+
+var clientReviewersID = 'clip[client.reviewers]';
+var clientReviewsID = 'clip[client.reviews]';
+var clientReviewedID = 'clip[client.reviewed]';
+var clientReviewID = 'clip[reviewed]';
+
+var clientApproversID = 'clip[client.approvers]';
+var clientActualApproverID = 'clip[client.actual.approver]';
+var clientApprovalsID = 'clip[client.approvals]';
+var clientApprovedID = 'clip[client.approved]';
+var clientApproveID = 'clip[client.approve]';
+var clientRejectionsID = 'clip[client.rejections]';
+var clientRejectedID = 'clip[client.rejected.by]';
+var clientPendingAppID = 'clip[client.pending.approver]';
+
+var agencyApproversID = 'clip[agency.approvers]';
+var agencyApprovalsID = 'clip[agency.approvals]';
+var agencyApprovedID = 'clip[agency.approved]';
+var agencyApproveID = 'clip[agency.approve]';
+var agencyRejectionsID = 'clip[agency.rejections]';
+var agencyRejectedID = 'clip[agency.rejected.by]';
+var agencyPendingAppID = 'clip[agency.pending.approver]';
+
+var producerApproversID = 'clip[producer.approvers]';
+var producerApprovalsID = 'clip[producer.approvals]';
+var producerApprovedID = 'clip[producer.approved]';
+var producerApproveID = 'clip[producer.approve]';
+var producerRejectionsID = 'clip[producer.rejections]';
+var producerRejectedID = 'clip[producer.rejected.by]';
+var producerPendingAppID = 'clip[producer.pending.approver]';
+
+var customerApproversID = 'clip[customer.approvers]';
+var customerApprovalsID = 'clip[customer.approvals]';
+var customerApprovedID = 'clip[customer.approved]';
+var customerApproveID = 'clip[customer.approve]';
+var customerRejectionsID = 'clip[customer.rejections]';
+var customerRejectedID = 'clip[customer.rejected.by]';
+var customerPendingAppID = 'clip[customer.pending.approver]';
+
+var produtorApproversID = 'clip[produtor.approvers]';
+var produtorApprovalsID = 'clip[produtor.approvals]';
+var produtorApprovedID = 'clip[produtor.approved]';
+var produtorApproveID = 'clip[produtor.approve]';
+var produtorRejectionsID = 'clip[produtor.rejections]';
+var produtorRejectedID = 'clip[produtor.rejected.by]';
+var produtorPendingAppID = 'clip[produtor.pending.approver]';
+
+var agenciaApproversID = 'clip[agencia.approvers]';
+var agenciaApprovalsID = 'clip[agencia.approvals]';
+var agenciaApprovedID = 'clip[agencia.approved]';
+var agenciaApproveID = 'clip[agencia.approve]';
+var agenciaRejectionsID = 'clip[agencia.rejections]';
+var agenciaRejectedID = 'clip[agencia.rejected.by]';
+var agenciaPendingAppID = 'clip[agencia.pending.approver]';
+
+var clienteApproversID = 'clip[cliente.approvers]';
+var clienteApprovalsID = 'clip[cliente.approvals]';
+var clienteApprovedID = 'clip[cliente.approved]';
+var clienteApproveID = 'clip[cliente.approve]';
+var clienteRejectionsID = 'clip[cliente.rejections]';
+var clienteRejectedID = 'clip[cliente.rejected.by]';
+var clientePendingAppID = 'clip[cliente.pending.approver]';
+
+var deliveryApproversID = 'clip[_delivery.approvers]';
+var deliveryApprovalsID = 'clip[delivery.approvals]';
+var deliveryApprovedID = 'clip[delivery.approved]';
+var deliveryRejectionsID = 'clip[delivery.rejections]';
+var deliveryApproveID = 'clip[delivery.approve]';
+var aprovacaoEmissoraID = 'clip[aprovacao.emissora]';
+var observacoesID = 'clip[observacoes]';
+var deliveryRejectedID = 'clip[delivery.rejected.by]';
+
+var qcApproversID = 'clip[qc.approvers]';
+var qcApprovalsID = 'clip[qc.approvals]';
+var qcRejectionsID = 'clip[qc.rejections]';
+var qcApprovedID = 'clip[qc.approved]';
+var qcApproveID = 'clip[qc.approve]';
+var qcFeedbackID = 'clip[qc.feedback]';
+var qcNotesID = 'clip[qc.notes]';
+var readytoOrderCatID = 'catalog[ready.to.order.catalog]';
+
+var transcodeApproversID = 'clip[transcode.approvers]';
+var transcodeApprovalsID = 'clip[transcode.approvals]';
+var transcodeRejectionsID = 'clip[transcode.rejections]';
+var transcodeApprovedID = 'clip[transcode.approved]';
+var transcodeApproveID = 'clip[transcode.approve]';
+
+var recivedID = 'clip[recived]';
+var recivedbyID = 'clip[received.by]';
+
+var deliveryCountryID = 'clip[delivery.country]';	// The only billing country that can request delivery of this clip
+var deliveryRequestID = 'clip[delivery.request]';	// Button to request delivery
+var deliveryStatusID = 'clip[delivery.status]';
+var deliveryNetworksID = 'clip[delivery.networks]';	// List of requested networks
+var deliveryDigitalID = 'clip[delivery.digital]';	// List of requested digital
+var deliveryFilenameID = 'clip[delivery.filename]';
+var deliveryRequestedbyID = 'clip[requested.by]';  // Add user to requested a delivery
+var deliveryCancelMoveID = 'clip[delivery.cancel.move.order]'; // Add cancel button
+var deliveryNotesID = 'clip[notes.delivery]';
+var aprovacaoEmissoraCnnID = 'clip[aprovacao.emissora.cnn]';
+var sendFileCnnID = 'clip[send.cnn]';
+
+
+var assetStatusID = 'clip[asset.status]';
+var assetClassID = 'clip[asset.class]';
+var logginStatusID = 'clip[logging.status]';
+var logginApprovedID = 'clip[logging.aproved]';
+var loggingCompleteID = 'clip[logging.complete]';
+var orderStatusID = 'clip[order.status]';
+var deliveryCancelID = 'clip[delivery.cancel]'; 						//Button to cancel delivery order
+var talentandrightsID = 'clip[talent.and.rights]'; 						// Talent in force
+var reenviaraoservidorID = 'clip[reenviar.ao.servidor]';
+var reenviaraoservidorCnnID = 'clip[reenviar.ao.servidor.cnn]';
+
+var billingCountryID = 'billing.country';
+var userpermittedconuntriesID = 'permitted.conuntries';
+var permittCountriesID = 'clip[permitted.countries]';
+
+var historyID = 'clip[asset.history]';
+var sendEmailID = 'clip[notify.approvers]';
+var sendClientEmailID = 'clip[notify.client.approvers]';				//Send Email Full Asset Approved by Client
+var sendClientActualEmailID = 'clip[notify.client.actual.approver]';	//Send Email Full Asset Approved by Client
+var sendClientActualRejectionEmailID = 'clip[notify.client.actual.rejections]';
+
+// Vars used in workflow INTERNAL APPROVER > PRODUCER APPROVER > AGENCY APPROVER > CUSTOMER APPROVER
+
+var sendAgencyEmailID = 'clip[notify.agency.approvers]';				//Send Email Full Asset Approved by Agency
+var sendProducerEmailID = 'clip[notify.producer.approvers]';			//Send Email Full Asset Approved by Producer
+var sendCustomerEmailID = 'clip[notify.customer.approvers]';			//Send Email Full Asset Approved by customer
+var sendDeliveryEmailID = 'clip[notify.delivery.approvers]';    		//Send Email Full Delivery Approved by Client
+var sendClientRejectedEmailID = 'clip[notify.client.rejections]';		//Send Email Full Asset Rejected by Client
+var sendAgencyRejectedEmailID = 'clip[notify.agency.rejections]';		//Send Email Full Asset Rejected by Agency
+var sendProducerRejectedEmailID = 'clip[notify.producer.rejections]';	//Send Email Full Asset Rejected by Producer
+var sendCustomerRejectedEmailID = 'clip[notify.customer.rejections]';	//Send Email Full Asset Rejected by customer
+
+// Vars to approve workflow but all fields in Portuguese // INTERNAL > PRODUTOR > AGENCIA > CLIENTE
+
+var sendprodutorEmailID = 'clip[notify.produtor.approvers]';			//Send Email Full Asset Approved by produtor Portuguese
+var sendagenciaEmailID = 'clip[notify.agencia.approvers]';				//Send Email Full Asset Approved by agencia
+var sendclienteEmailID = 'clip[notify.cliente.approvers]';				//Send Email Full Asset Approved by cliente
+var sendprodutorRejectedEmailID = 'clip[notify.produtor.rejections]';	//Send Email Full Asset Rejected by produtor
+var sendagenciaRejectedEmailID = 'clip[notify.agencia.rejections]';		//Send Email Full Asset Rejected by agencia
+var sendclienteRejectedEmailID = 'clip[notify.cliente.rejections]';		//Send Email Full Asset Rejected by cliente
+var sendDeliveryRejectedEmailID = 'clip[notify.delivery.rejections]';	//Send Email Full Delivery Rejected by Delivery
+var sendTranscodeApprovedEmailID = 'clip[notify.transcode.received]';	//Send Email Full Transcode Approved by Client
+var sendTranscodeRejectedEmailID = 'clip[notify.transcode.rejected]';	//Send Email Full Transcode Rejected by Network
+
+//added by Alex Zapata yo add update brief
+var briefUpdateID = 'clip[brief.fields.update]';
+var briefStatusID = 'clip[brief.status]';
+var briefUpdateFieldID = 'clip[brief.update]';
+
+
+var uploadYoutubeID = 'clip[upload.youtube]';
+var uploadYoutubeBRID = 'clip[upload.youtube.br]';
+var uploadYoutubeActionID = 'clip[upload.to.youtube.action]';
+var youtubeteamID = 'clip[youtube.team]';
+var tempprojectnameID = 'clip[_project.name]';
+
+var ProjectNameID = 'clip[project.name]';
+var tProjectNameID = 'clip[temp.project.name]';
+var tempisciID = 'clip[temp.isci]';
+
+
+
+//added by Uncle Charles, Inc. to test internal approval timestamp.
+var internalAppDate = 'clip[internal.approved.date]';
+var externalAppDate = 'clip[client.approved.date]';
+var producerAppDate = 'clip[producer.approved.date]';
+var agencyAppDate = 'clip[agency.approved.date]';
+var customerAppDate = 'clip[customer.approved.date]';
+var produtorAppDate = 'clip[produtor.approved.date]';
+var agenciaAppDate = 'clip[agencia.approved.date]';
+var clienteAppDate = 'clip[cliente.approved.date]';
+var deliveryAppDate = 'clip[delivery.approved.date]';
+var redeliveryAppDate = 'clip[redelivery.date]';
+var datadeaprobacaoAppDate = 'clip[date.delivered]';
+var qcAppDate = 'clip[qc.approved.date]';
+var transcodeAppDate = 'clip[transcode.approved.date]';
+var orderAppDate = 'clip[order.date]';
+var ytPublishDate = 'clip[youtube.publish.date]';
+
+//added by Uncle Charles, Inc. for Catalog name instead of clip.name
+var clipIsciID = 'clip[isci]';
+//added by Uncle Charles, Inc. to set clip requested status
+var requestedStatus = 'clip[requested.status]';
+//added by Uncle Charles, Inc. to set clip clear delivery fields status
+var clearDeliveryFields = 'clip[clear.delivery.fields]';
+var pendingDeliveryOrder = 'clip[pending.delivery.order]';
+var timestamp = new(Date);
+var costPer = 'clip[cost.per.delivery]';
+var totalCost = 'clip[total.delivery.cost]';
+var collabLink = 'clip[collaboration.link]';
+var deliveryProof = 'clip[delivery.proof]';
+var previousLink = 'clip[previous.clip]';
+var requestedstatusYTID = 'clip[requested.status.youtube]';
+var agencyaccountID = 'clip[requested.by]';
+
+
+//add send emissoras file[s and teams for mail
+var sendFileRecordtvID = 'clip[send.file.recordtv]';
+var sendmailtoteamID = 'clip[send.file.mail.to.team]';
+
+function getUser(username, callback)
+{
+
+		CatDV.callRESTAPIAsync("GET", "/users?include=fields", null, function(result) {
+			//CatDV.log("Get users returned: " + JSON.stringify(result, null, 4));
+
+			var users = result.data;
+			CatDV.log("users: " + users);
+			for (var i = 0; i<users.length; i++)
+			{
+				var user = users[i];
+				//CatDV.log("Try user: " + user.ID);
+				if (user.name.toUpperCase() === username.toUpperCase())
+				{
+					//CatDV.log("found user: " + user.ID);
+					callback(user);
+					return;
+				}
+			}
+			CatDV.log("Error: username not found: " + username);
+			callback(null);
+		});
+}
+
+function catdv_onCreateField(group, fieldId)
+{
+	if (!enable)
+		return;
+}
+
+function checkAuthority(approversID)
+{
+	var clip = CatDV.getClip();
+	if (!clip) return false;
+	var user = CatDV.getUserName();
+	if (!user)
+	{
+	 CatDV.log("No user found");
+	 return false;
+	}
+	CatDV.log("checkAuthority for user: " + user);
+
+	var approvers = splitString(clip.get(approversID));
+
+	if (approvers.length > 0)
+	{
+		CatDV.log("checkAuthority: " + approvers);
+
+		if (approvers.indexOf(user) < 0)
+		{
+			CatDV.log("User is not an approver");
+			CatDV.showMessage("You are not an approver for this asset");
+			return false;
+		}
+		return true;
+		clip.put(approveID, '')
+	}
+	CatDV.log("No approvers set");
+	CatDV.showMessage("No approvers set");
+
+	return false;
+}
+
+function checkUserIsParticipant()
+{
+
+	var clip = CatDV.getClip();
+	if (!clip) return false;
+	var username = CatDV.getUserName();
+	if (!username)
+	{
+	 CatDV.log("No user found");
+	 return false;
+	}
+	CatDV.log("checkUserIsParticiapant for user: " + username);
+
+	getUser(username, function(user) {
+
+		var preApprovedCountries = splitString(clip.get(preApprovedCountriesID));
+		var preAutorizedCountries = splitString(clip.get(preAutorizedCountriesID));
+		CatDV.log("autorizedCountriesID: " + permittedCountriesID);
+		var val = user.fields[permittedCountriesID];
+		CatDV.log("value: " + val);
+		var permittedCountries = splitString(val);
+		CatDV.log("split: " + permittedCountries);
+		var billing = user.fields[billingCountryID];
+		var billingCountry = splitString(billing);
+		var preautorized = user.fields[preAutorizedID];
+		var transcodeCatalog = clip.get(transcodeCatalogID);
+		var orderCatalog = clip.get(orderCatalogID);
+
+		if (orderCatalog != "true")// || (transcodeCatalog != "true"))
+		{
+			if (transcodeCatalog != "true")
+			{
+
+		if (preApprovedCountries.length == 0)
+		{
+			CatDV.log("No pre-approved countries set");
+			CatDV.showMessage("You cannot edit this catalog because no pre-approved countries have been set. Please contact Lathink.");
+			return false;
+		}
+
+		if (permittedCountries.length == 0)
+		{
+			CatDV.log("User has no permitted countries set");
+			CatDV.showMessage("You cannot edit this catalog because your user account does not have any permitted countries. Please contact Lathink.");
+			return false;
+		}
+
+		if (preAutorizedCountries.length == 0)
+		{
+			CatDV.log("User has no permitted countries set");
+			CatDV.showMessage("You cannot edit this catalog because no pre-autorized countries have been set. Please contact Lathink.");
+			return false;
+		}
+
+		if (preautorized == "true")
+		{
+
+
+
+		for (var i=0; i<preAutorizedCountries.length; i++)
+		{
+			CatDV.log("check: " + billingCountry + "  contains " + preAutorizedCountries[i] );
+
+			var precountry = preAutorizedCountries[i];
+
+			if (precountry == billingCountry)
+			{
+
+				var usernotpermit = 'true';
+				var i= preAutorizedCountries.length;
+			}
+			else
+			{
+				var usernotpermit = 'false';
+			}
+
+		}
+
+		if (usernotpermit == 'false')
+			{
+				clip.put(checkuserisparticipantID, "true");
+				CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+				return false;
+			}
+		}}}
+		clip.put(checkuserisparticipantID, "false");
+			return false;
+
+	});
+}
+
+function foreach(array, f)
+{
+	for (i=0; i<array.length; i++)
+	{
+		f(array[i]);
+	}
+}
+
+// Split an (array of) (comma-or-newline-separated) string(s) into an array of strings
+function splitString(arg)
+{
+	if (!arg)
+	{
+		CatDV.log("splitString: undefined or null");
+		var ret = new Array();
+	}
+	else if (typeof arg === "object")
+	{
+		if (Array.isArray(arg))
+		{
+			CatDV.log("splitString: is array");
+			var ret = arg;
+		}
+		else
+		{
+			CatDV.log("splitString: other object; stringifying..");
+			var ret = new Array(String(arg));
+		}
+	}
+	else if (typeof arg === "string")
+	{
+		if (arg.indexOf('\n') >= 0)
+		{
+			CatDV.log("splitString: new-line separated string");
+			var ret = arg.split('\n');
+		}
+		else if (arg.indexOf(',') >= 0)
+		{
+			CatDV.log("splitString: comma-separated string");
+			var ret = arg.split(',');
+		}
+		else if (arg.length > 0)
+		{
+			CatDV.log("splitString: single item string");
+			var ret = new Array(arg);
+		}
+		else
+		{
+			CatDV.log("splitString: empty string");
+			var ret = new Array();
+		}
+	}
+	else
+	{
+		CatDV.log("splitString: unexpected type: " + typeof arg);
+		var ret = new Array("" + arg); // See what coercion comes up with
+	}
+
+	foreach(ret, function(element) {
+		CatDV.log("   element: " + element);
+	});
+	return ret;
+}
+
+function addHistory(clip, message)
+{
+	var timestamp = new(Date);
+	var history = clip.get(historyID) || "";
+	clip.put(historyID, history + timestamp + " " + CatDV.getUserName() + ": " +  message + "\n");
+	clip.put(deliveryRequestID, "");
+	//added by Uncle Charles, Inc. to test internal approval timestamp.
+	if (message == "Internally approved")
+		{
+			clip.put(internalAppDate, timestamp);
+		}
+	else if (message == "Externally approved")
+		{
+			clip.put(externalAppDate, timestamp);
+		}
+
+	else if (message == "Externally Agency approved")
+		{
+			clip.put(agencyAppDate, timestamp);
+		}
+
+	else if (message == "Externally Producer approved")
+		{
+			clip.put(producerAppDate, timestamp);
+		}
+
+	else if (message == "Externally Customer approved")
+		{
+			clip.put(customerAppDate, timestamp);
+		}
+
+	else if (message == "Externally agencia approved")
+		{
+			clip.put(agenciaAppDate, timestamp);
+		}
+
+	else if (message == "Externally produtor approved")
+		{
+			clip.put(produtorAppDate, timestamp);
+		}
+	else if (message == "Externally cliente approved")
+		{
+			clip.put(clienteAppDate, timestamp);
+		}
+
+	else if (message == "Delivery approved")
+		{
+			clip.put(deliveryAppDate, timestamp);
+		}
+
+	else if (message == "Quality Control approved")
+		{
+			clip.put(qcAppDate , timestamp);
+		}
+	else if (message == "Transcode Quality Control approved")
+		{
+			clip.put(transcodeAppDate , timestamp);
+		}
+	else if (message == "Global Content NO")
+		{
+			clip.put(transcodeAppDate , timestamp);
+		}
+	else if (message == "Global Content YES")
+		{
+			clip.put(transcodeAppDate , timestamp);
+		}
+
+	else if (message == "Reenviando para o servidor")
+		{
+			clip.put(redeliveryAppDate, timestamp);
+		}
+	else if (message == "Aprovado y Entregue para o servidor")
+		{
+			clip.put(datadeaprobacaoAppDate, timestamp);
+		}
+	else if (message == "Não Aprovado. Rejeitado pelo emissora")
+		{
+			clip.put(datadeaprobacaoAppDate, timestamp);
+		}
+
+
+	//end added by Uncle Charles, Inc.
+
+
+}
+
+
+function addApprover(approvalsID, approversID, rejectionsID, approvedID, category)  // Click on YES
+{
+	var clip = CatDV.getClip();
+	if (!clip) return;
+	var user = CatDV.getUserName();
+	if (!user)
+	{
+	 CatDV.log("No user found");
+	 return;
+	}
+
+	if (approvedID == assetApprovedID)
+	{
+	}
+	else if (approvedID == clientApprovedID)
+	{
+		if (clip.get(assetApprovedID) != "Approved")
+		{
+			CatDV.showMessage("Asset must be internally approved before Client Approval");
+			return;
+		}
+	}
+	else if (approvedID == qcApprovedID)
+	{
+		if (clip.get(clientApprovedID) != "Approved")
+		{
+			CatDV.showMessage("Asset must be Client Approved before Quality Control Approval");
+			return;
+		}
+		else if (clip.get(logginApprovedID) != "Logging Complete")
+		{
+			CatDV.showMessage("Asset must be Logging Complete before Quality Control Approval");
+			return;
+		}
+	}
+
+	else if (approvedID == transcodeApprovedID)
+	{
+		if (clip.get(assetClassID) != "Transcode")
+		{
+			CatDV.showMessage("Asset Class must be TRANSCODE you can not QC this asset");
+			return;
+		}
+	}
+
+
+	if (approvedID == clientApprovedID)
+	{
+	var clientPendingApp = clip.get(clientPendingAppID);
+
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+
+
+
+	var user = CatDV.getUserName();
+	var index = clientPendingApp.indexOf(user);
+	if (index > -1) {
+		clientPendingApp.splice(index, 1);
+		}
+	clip.put(clientPendingAppID, clientPendingApp);
+	}
+
+	clip.set(sendClientActualEmailID, 'true');             	//Send Email Full Asset Approved by Client
+	clip.put(clientActualApproverID, user);
+
+	if (approvedID == agencyApprovedID)
+	{
+	var agencyPendingApp = clip.get(agencyPendingAppID);
+
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+
+	var user = CatDV.getUserName();
+	var index = agencyPendingApp.indexOf(user);
+	if (index > -1) {
+		agencyPendingApp.splice(index, 1);
+		}
+	clip.put(agencyPendingAppID, agencyPendingApp);
+	}
+
+	if (approvedID == producerApprovedID)
+	{
+	var producerPendingApp = clip.get(producerPendingAppID);
+
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+
+	var user = CatDV.getUserName();
+	var index = producerPendingApp.indexOf(user);
+	if (index > -1) {
+		producerPendingApp.splice(index, 1);
+		}
+	clip.put(producerPendingAppID, producerPendingApp);
+	}
+
+	if (approvedID == customerApprovedID)										//Retake clip and view user in DB
+	{
+	var customerPendingApp = clip.get(customerPendingAppID);
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+	var user = CatDV.getUserName();
+	var index = customerPendingApp.indexOf(user);
+	if (index > -1) {
+		customerPendingApp.splice(index, 1);
+		}
+	clip.put(customerPendingAppID, customerPendingApp);
+	}
+
+	if (approvedID == agenciaApprovedID)
+	{
+	var agenciaPendingApp = clip.get(agenciaPendingAppID);
+
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+
+	var user = CatDV.getUserName();
+	var index = agenciaPendingApp.indexOf(user);
+	if (index > -1) {
+		agenciaPendingApp.splice(index, 1);
+		}
+	clip.put(agenciaPendingAppID, agenciaPendingApp);
+	}
+
+	if (approvedID == produtorApprovedID)
+	{
+	var produtorPendingApp = clip.get(produtorPendingAppID);
+
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+
+	var user = CatDV.getUserName();
+	var index = produtorPendingApp.indexOf(user);
+	if (index > -1) {
+		produtorPendingApp.splice(index, 1);
+		}
+	clip.put(produtorPendingAppID, produtorPendingApp);
+	}
+
+
+	if (approvedID == clienteApprovedID)										//Retake clip and view user in DB
+	{
+	var clientePendingApp = clip.get(clientePendingAppID);
+	var projectName = clip.get(ProjectNameID);
+	var isciCode = clip.get(clipIsciID);
+	var user = CatDV.getUserName();
+	var index = clientePendingApp.indexOf(user);
+	if (index > -1) {
+		clientePendingApp.splice(index, 1);
+		}
+	clip.put(clientePendingAppID, clientePendingApp);
+	}
+
+
+	var clipName = clip.get(clipNameID);
+	var ret = clip.get(rejectionsID);
+	var rejectionsall = clip.get(rejectionsID);
+	CatDV.log("Rejections: [" + ret + "] type: " + typeof ret);
+	var rejections = splitString(ret);
+	CatDV.log("addApprover: rejections: " + rejections);
+	if (rejections.indexOf(user) >= 0)
+	{
+		CatDV.log("Already not approved");
+		return;
+	}
+
+	var ret = clip.get(approvalsID);
+	CatDV.log("Approvals: [" + ret + "] type: " + typeof ret);
+	var approvals = splitString(ret);
+
+	CatDV.log("addApprover: approvals: " + approvals);
+	if (approvals.indexOf(user) >= 0)
+	{
+		CatDV.log("Already approved");
+		return;
+	}
+	approvals.push(user);
+	approvals.sort();
+	var newApprovals = approvals.join("\n");
+	clip.put(approvalsID, newApprovals);
+	addHistory(clip, category + " approved");
+
+	var ret = clip.get(approversID);
+	CatDV.log("Approvers: [" + ret + "] type: " + typeof ret);
+	var approvers = splitString(ret);
+	approvers.sort();
+
+
+	if (rejections == "")
+	{
+	var allapprovals =	approvals;
+	}
+	else
+	{
+	var rejAll = rejectionsall.join("\n");
+	ret =  newApprovals + "\n" + rejAll;
+	var allapprovals = splitString(ret);
+	allapprovals.sort();
+
+	}
+
+
+
+	if (approvers.length==(approvals.length+=rejections.length) && approvers.every(function(v,i) { return v == allapprovals[i];}))
+	{
+		if (rejections == "")
+		{
+		CatDV.log("Fully approved");
+
+		if (approvedID == assetApprovedID)						//Internally Full Approved
+		{
+			clip.put(assetStatusID, "Internal Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+
+		}
+		else if (approvedID == clientApprovedID)				//Client Full Approved
+		{
+			clip.put(assetStatusID, "Client Approved");
+			clip.put(logginStatusID, "Ready for QC and Logging Approved By Client")
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendClientEmailID, 'true');             	//Send Email Full Asset Approved by Client
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+
+		else if (approvedID == agencyApprovedID)				//Agency Full Approved
+		{
+			clip.put(assetStatusID, "Agency Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendAgencyEmailID, 'true');             	//Send Email Full Asset Approved by Agency
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+
+		else if (approvedID == producerApprovedID)				//Producer Full Approved
+		{
+			clip.put(assetStatusID, "Producer Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendProducerEmailID, 'true');             //Send Email Full Asset Approved by Producer
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+
+		else if (approvedID == customerApprovedID)				//customer Full Approved
+		{
+			clip.put(assetStatusID, "Customer Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendCustomerEmailID, 'true');             	//Send Email Full Asset Approved by customer
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+
+		else if (approvedID == agenciaApprovedID)				//agencia Full Approved
+		{
+			clip.put(assetStatusID, "Agency Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendagenciaEmailID, 'true');             	//Send Email Full Asset Approved by agencia
+			CatDV.showMessage("Você aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+
+		}
+
+		else if (approvedID == produtorApprovedID)				//produtor Full Approved
+		{
+			clip.put(assetStatusID, "Producer Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendprodutorEmailID, 'true');             //Send Email Full Asset Approved by produtor
+			CatDV.showMessage("Você aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+
+		}
+
+		else if (approvedID == clienteApprovedID)				//cliente Full Approved
+		{
+			clip.put(assetStatusID, "Client Approved");
+			clip.set(approvedID, "Approved");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendclienteEmailID, 'true');             	//Send Email Full Asset Approved by cliente
+			CatDV.showMessage("Você aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+
+		}
+
+
+		else if (approvedID == deliveryApprovedID)				//Delivery Full Approved
+		{
+			clip.put(orderStatusID, "Approved")
+			clip.set(approvedID, "Approved")
+			clip.put(assetStatusID, "");
+			//clip.set(deliveryStatusID, "Approved");
+			clip.set(sendDeliveryEmailID, 'true');             //Send Email Full Delivery Approved by Client
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+		else if (approvedID == qcApprovedID)					//QC Full Approved
+		{
+			var isciCode = clip.get(clipIsciID);
+			var projectName = clip.get(ProjectNameID);
+			clip.put(assetStatusID, "Ready to Order")
+			clip.put(orderStatusID, "")
+			clip.put(logginStatusID, "QC and Logging Complete")
+			clip.set(qcApprovedID, "QC Pass");
+			clip.set(readytoOrderCatID, "true");
+			clip.put(qcFeedbackID, "Pass");
+			clip.set(tProjectNameID, projectName);
+			clip.set(tempisciID, isciCode);
+			clip.set(sendDeliveryEmailID, 'true');
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+		else if (approvedID == transcodeApprovedID)				//Transcode Full Approved
+		{
+
+			clip.set(transcodeApprovedID, "Transcode Pass");
+			clip.set(deliveryStatusID, "Ready to Deliver");
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+
+		}
+
+		}
+		else 													//Asset All approvers participant but Not Approved
+		{
+		CatDV.log("Fully not approved");
+		//clip.set(approvedID, "Not Approved");
+		if (approvedID == assetApprovedID)
+		{
+			clip.set(assetApprovedID, "Not Approved");
+			clip.put(assetStatusID, "Internal Not Approved");
+			CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		}
+
+
+		else if (approvedID == clientApprovedID)
+		{
+			clip.set(assetApprovedID, "Awaiting approval");
+			clip.put(assetStatusID, "Client Not Approved");
+			clip.set(clientApprovedID, "Client rejected");
+			clip.set(clientRejectedID, CatDV.getUserName());
+			clip.set(sendClientRejectedEmailID, 'true');
+			CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+		}
+
+
+		else if (approvedID == producerApprovedID)
+		{
+			clip.set(assetApprovedID, "Awaiting approval");
+			clip.put(assetStatusID, "Producer Not Approved");
+			clip.set(producerApprovedID, "Producer rejected");
+			clip.set(producerRejectedID, CatDV.getUserName());
+			clip.set(sendProducerRejectedEmailID, 'true');
+			CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+		}
+
+		else if (approvedID == agencyApprovedID)
+		{
+			clip.set(assetApprovedID, "Awaiting approval");
+			clip.set(producerApprovedID, "Awaiting approval");
+			clip.put(agencyStatusID, "Producer Not Approved");
+			clip.set(agencyApprovedID, "Not Approved");
+			clip.set(agencyRejectedID, CatDV.getUserName());
+			clip.set(sendAgencyRejectedEmailID, 'true');
+			CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+			addHistory(clip, "Producer approval automatically set to Awaiting Approval");
+		}
+
+
+		else if (approvedID == customerApprovedID)
+		{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.set(producerApprovedID, "Awaiting approval");
+		clip.set(agencyApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Customer Not Approved");
+		clip.set(customerApprovedID, "Customer rejected");
+		clip.set(customerRejectedID, CatDV.getUserName());
+		clip.set(sendCustomerRejectedEmailID, 'true');
+		CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+		addHistory(clip, "Producer approval automatically set to Awaiting Approval");
+		addHistory(clip, "Agency approval automatically set to Awaiting Approval");
+		}
+
+
+		else if (approvedID == produtorApprovedID)
+		{
+			clip.set(assetApprovedID, "Awaiting approval");
+			clip.put(assetStatusID, "Producer Not Approved");
+			clip.set(produtorApprovedID, "Producer rejected");
+			clip.set(produtorRejectedID, CatDV.getUserName());
+			clip.set(sendprodutorRejectedEmailID, 'true');
+			CatDV.showMessage("Você não aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+			addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+		}
+
+		else if (approvedID == agenciaApprovedID)
+		{
+			clip.set(assetApprovedID, "Awaiting approval");
+			clip.set(produtorApprovedID, "Awaiting approval");
+			clip.put(agenciaStatusID, "Producer Not Approved");
+			clip.set(agenciaApprovedID, "Not Approved");
+			clip.set(agenciaRejectedID, CatDV.getUserName());
+			clip.set(sendagenciaRejectedEmailID, 'true');
+			CatDV.showMessage("Você não aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+			addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+			addHistory(clip, "produtor approval automatically set to Awaiting Approval");
+		}
+
+
+		else if (approvedID == clienteApprovedID)
+		{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.set(produtorApprovedID, "Awaiting approval");
+		clip.set(agenciaApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Client Not Approved");
+		clip.set(clienteApprovedID, "Client rejected");
+		clip.set(clienteRejectedID, CatDV.getUserName());
+		clip.set(sendclienteRejectedEmailID, 'true');
+		CatDV.showMessage("Você não aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		addHistory(clip, "Internal approval automatically set to Awaiting Approval");
+		addHistory(clip, "produtor approval automatically set to Awaiting Approval");
+		addHistory(clip, "agencia approval automatically set to Awaiting Approval");
+		}
+
+
+
+		else if (approvedID == qcApprovedID)
+		{
+			clip.set(qcApprovedID, "QC Fail");
+			clip.put(assetStatusID, "Setting Up")
+			clip.put(logginStatusID, "QC Failed");
+			clip.put(qcApproveID, "");
+			clip.put(qcFeedbackID, "Fail/");
+			clip.put(qcNotesID, "-");
+
+		}
+		else if (approvedID == deliveryApprovedID)
+		{
+			clip.put(orderStatusID, "Not Approved");
+			clip.put(assetStatusID, "");
+			clip.set(deliveryRejectedID, CatDV.getUserName());
+			clip.set(sendDeliveryRejectedEmailID, 'true');
+			clip.set(deliveryApprovedID, 'Not Approved');
+
+		}
+		else if (approvedID == transcodeApprovedID)
+		{
+			clip.set(transcodeApprovedID, "Transcode Fail");
+			clip.set(deliveryStatusID, "QC Fail");
+			clip.put(transcodeApproveID, "");
+			clip.put(deliveryStatusID, "Delivery Not Approved");
+		}
+		}
+	}
+
+	else
+	{
+		CatDV.log("Further approvals required. Approvers: [" + approvers + "] Approvals: [" + newApprovals + "]");
+
+		if (approvedID == assetApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Internal Approval");
+			clip.put(approvedID, "Awaiting approval");
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		return;
+		}
+		else if (approvedID == clientApprovedID)						//Furter approvals required. Wait more participants.
+		{
+			clip.put(assetStatusID, "Awaiting Client Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(clientRejectedID, "");
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		return;
+		}
+		else if (approvedID == producerApprovedID)
+		{
+			clip.put(producerStatusID, "Awaiting Producer Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(producerRejectedID, "");
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		return;
+		}
+		else if (approvedID == agencyApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Agency Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(agencyRejectedID, "");
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		return;
+		}
+
+		else if (approvedID == customerApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Customer Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(customerRejectedID, "");
+			CatDV.showMessage("You have Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		return;
+		}
+
+
+		else if (approvedID == produtorApprovedID)
+		{
+			clip.put(produtorStatusID, "Awaiting Producer Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(produtorRejectedID, "");
+			CatDV.showMessage("Você aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+
+
+		}
+		else if (approvedID == agenciaApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Agency Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(agenciaRejectedID, "");
+			CatDV.showMessage("Você aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+
+
+		}
+
+		else if (approvedID == clienteApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Client Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(clienteRejectedID, "");
+			CatDV.showMessage("Você aprovou este ativo   " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+
+		}
+
+
+	    else if (approvedID == deliveryApprovedID)
+		{
+			clip.put(orderStatusID, "Awaiting Approval")
+			clip.put(approvedID, "Awaiting approval");
+			clip.put(deliveryRejectedID, "");
+		}
+
+	}
+
+	if (approvedID == clientReviewedID)
+		{
+			CatDV.log("Set Asset Review Approval to: ", newApprovals);
+        	CatDV.showMessage("You have Reviewed this asset:  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+	 else if (approvedID == qcApprovedID)
+		{
+			CatDV.log("Set Asset QC Approval to: ", newApprovals);
+	        CatDV.showMessage("You have QC Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+	 else if (approvedID == transcodeApprovedID)
+		{
+			CatDV.log("Set Asset Transcode Approval to: ", newApprovals);
+	        CatDV.showMessage("You have Transcode Quality Control Approved this asset:\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+
+	else if (approvedID == deliveryApprovedID)
+		{
+			CatDV.log("Set Delivery Approval to: ", newApprovals);
+			var deliveryNotes = clip.get(deliveryNotesID);
+	        CatDV.showMessage("You have Approved Delivery " + deliveryNotes + "");
+			return;
+		}
+
+	CatDV.log("Set Asset Approval to: ", newApprovals);
+
+
+}
+
+
+
+function removeAllApprovers(approvalsID, approversID, rejectionsID, approvedID, category)  // Click on NOT
+{
+	var clip = CatDV.getClip();
+	if (!clip) return;
+	var user = CatDV.getUserName();
+	if (!user)
+	{
+	 CatDV.log("No user found");
+	 return;
+	}
+	var clipName = clip.get(clipNameID);
+	var ret = clip.get(approvalsID);
+
+	if (approvedID == assetApprovedID)
+	{
+	}
+	else if (approvedID == clientApprovedID)
+	{
+		if (clip.get(assetApprovedID) != "Approved")
+		{
+			CatDV.showMessage("Asset must be internally approved before Client Approval");
+			return;
+		}
+	}
+	else if (approvedID == qcApprovedID)
+	{
+		if (clip.get(clientApprovedID) != "Approved")
+		{
+			CatDV.showMessage("Asset must be Client Approved before Quality Control Approval");
+			return;
+		}
+		else if (clip.get(logginApprovedID) != "Logging Complete")
+		{
+			CatDV.showMessage("Asset must be Logging Complete before Quality Control Approval");
+			return;
+		}
+	}
+
+	else if (approvedID == transcodeApprovedID)
+	{
+		if (clip.get(assetClassID) != "Transcode")
+		{
+			CatDV.showMessage("Asset Class must be TRANSCODE you can not Transcode QC this asset");
+			return;
+		}
+	}
+
+
+
+	if (approvedID == clientApprovedID)
+	{
+	var clientPendingApp = clip.get(clientPendingAppID);
+	var user = CatDV.getUserName();
+
+	clip.set(sendClientActualRejectionEmailID, 'true');             	//Send Email Full Asset Approved by Client
+	clip.put(clientActualApproverID, user);
+
+
+	var index = clientPendingApp.indexOf(user);
+
+	if (index > -1) {
+		clientPendingApp.splice(index, 1);
+		}
+	clip.put(clientPendingAppID, clientPendingApp);
+	}
+
+
+	if (approvedID == producerApprovedID)
+	{
+	var producerPendingApp = clip.get(producerPendingAppID);
+	var user = CatDV.getUserName();
+	var index = producerPendingApp.indexOf(user);
+	if (index > -1) {
+		producerPendingApp.splice(index, 1);
+		}
+	clip.put(producerPendingAppID, producerPendingApp);
+	}
+
+	if (approvedID == agencyApprovedID)
+	{
+	var agencyPendingApp = clip.get(agencyPendingAppID);
+	var user = CatDV.getUserName();
+	var index = agencyPendingApp.indexOf(user);
+	if (index > -1) {
+		agencyPendingApp.splice(index, 1);
+		}
+	clip.put(agencyPendingAppID, agencyPendingApp);
+	}
+
+	if (approvedID == customerApprovedID)
+	{
+	var customerPendingApp = clip.get(customerPendingAppID);
+	var user = CatDV.getUserName();
+	var index = customerPendingApp.indexOf(user);
+	if (index > -1) {
+		customerPendingApp.splice(index, 1);
+		}
+	clip.put(customerPendingAppID, customerPendingApp);
+	}
+
+	if (approvedID == produtorApprovedID)
+	{
+	var produtorPendingApp = clip.get(produtorPendingAppID);
+	var user = CatDV.getUserName();
+	var index = produtorPendingApp.indexOf(user);
+	if (index > -1) {
+		produtorPendingApp.splice(index, 1);
+		}
+	clip.put(produtorPendingAppID, produtorPendingApp);
+	}
+
+	if (approvedID == agenciaApprovedID)
+	{
+	var agenciaPendingApp = clip.get(agenciaPendingAppID);
+	var user = CatDV.getUserName();
+	var index = agenciaPendingApp.indexOf(user);
+	if (index > -1) {
+		agenciaPendingApp.splice(index, 1);
+		}
+	clip.put(agenciaPendingAppID, agenciaPendingApp);
+	}
+
+	if (approvedID == clienteApprovedID)
+	{
+	var clientePendingApp = clip.get(clientePendingAppID);
+	var user = CatDV.getUserName();
+	var index = clientePendingApp.indexOf(user);
+	if (index > -1) {
+		clientePendingApp.splice(index, 1);
+		}
+	clip.put(clientePendingAppID, clientePendingApp);
+	}
+
+
+	var ret = clip.get(approvalsID);
+	var approvalsall = clip.get(approvalsID);
+	var approvals = splitString(ret);
+	if (approvals.indexOf(user) >= 0)
+	{
+		CatDV.log("Already approved");
+		return;
+	}
+
+	var ret = clip.get(rejectionsID);
+	CatDV.log("Rejections: [" + ret + "] type: " + typeof ret);
+	var rejections = splitString(ret);
+	CatDV.log("addApprover: rejections: " + rejections);
+	if (rejections.indexOf(user) >= 0)
+	{
+		CatDV.log("Already not approved");
+		return;
+	}
+	rejections.push(user);
+	rejections.sort();
+	var newRejections = rejections.join("\n");
+	clip.put(rejectionsID, newRejections);
+	addHistory(clip, category + " Not approved");
+	ret = clip.get(approversID);
+	CatDV.log("Approvers: [" + ret + "] type: " + typeof ret);
+	var approvers = splitString(ret);
+	approvers.sort();
+
+
+	if (approvals == "")
+	{
+		var allapprovals = rejections;
+	}
+	else
+	{
+		var rejAll = approvalsall.join("\n");
+		ret =  rejAll + "\n" + newRejections;
+		var allapprovals = splitString(ret);
+		allapprovals.sort();
+	}
+
+
+	if (approvers.length==(approvals.length+=rejections.length) && approvers.every(function(v,i) { return v == allapprovals[i];}))  // Fully not approved
+	{
+		CatDV.log("Fully not approved");
+
+	if (approvedID == assetApprovedID)
+	{
+		clip.set(assetApprovedID, "Not Approved");
+		clip.put(assetStatusID, "Internal Not Approved");
+	}
+	else if (approvedID == qcApprovedID)
+	{
+		clip.set(qcApprovedID, "QC Fail");
+		clip.put(assetStatusID, "Setting Up")
+		clip.put(qcApproveID, "");
+		clip.put(qcFeedbackID, "Fail/");
+		clip.put(qcNotesID, "-");
+		CatDV.showMessage("You haven't QC approved this asset   " + clipName + "  now requires complete QC Feedback in order to Setting Up this asset.\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+	}
+	else if (approvedID == transcodeApprovedID)
+	{
+		clip.set(transcodeApprovedID, "Transcode Fail");
+		clip.set(deliveryStatusID, "QC Fail");
+		clip.put(transcodeApproveID, "");
+		clip.put(deliveryStatusID, "Delivery Not Approved")
+	}
+	else if (approvedID == clientApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Client Not Approved");
+		clip.set(clientApprovedID, "Client rejected");
+		clip.set(clientRejectedID, CatDV.getUserName());
+		clip.set(sendClientRejectedEmailID, 'true');
+		CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		addHistory(clip, "Internal approval automatically set to Awaiting Internal re-approval");
+	}
+
+	else if (approvedID == producerApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Producer Not Approved");
+		clip.set(producerApprovedID, "Producer rejected");
+		clip.set(producerRejectedID, CatDV.getUserName());
+		clip.set(sendProducerRejectedEmailID, 'true');
+		CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		addHistory(clip, "Internal approval automatically set to Awaiting approval");
+	}
+
+	else if (approvedID == agencyApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.set(producerApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Producer Not Approved");
+		clip.set(agencyApprovedID, "Not Approved");
+		clip.set(agencyRejectedID, CatDV.getUserName());
+		clip.set(sendAgencyRejectedEmailID, 'true');
+		CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		addHistory(clip, "Internal approval automatically set to Awaiting approval");
+		addHistory(clip, "Producer approval automatically set to Awaiting approval");
+	}
+
+	else if (approvedID == customerApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.set(producerApprovedID, "Awaiting approval");
+		clip.set(agencyApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "customer Not Approved");
+		clip.set(customerApprovedID, "Customer rejected");
+		clip.set(customerRejectedID, CatDV.getUserName());
+		clip.set(sendcustomerRejectedEmailID, 'true');
+		CatDV.showMessage("You haven't approved this asset   " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		addHistory(clip, "Internal approval automatically set to Awaiting approval");
+		addHistory(clip, "Producer approval automatically set to Awaiting approval");
+		addHistory(clip, "Agency approval automatically set to Awaiting approval");
+	}
+
+
+	else if (approvedID == produtorApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Producer Not Approved");
+		clip.set(produtorApprovedID, "Producer rejected");
+		clip.set(produtorRejectedID, CatDV.getUserName());
+		clip.set(sendprodutorRejectedEmailID, 'true');
+		CatDV.showMessage("Você não aprovou este ativo  " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		addHistory(clip, "Internal approval automatically set to Awaiting approval");
+	}
+
+	else if (approvedID == agenciaApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.set(produtorApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Producer Not Approved");
+		clip.set(agenciaApprovedID, "Not Approved");
+		clip.set(agenciaRejectedID, CatDV.getUserName());
+		clip.set(sendagenciaRejectedEmailID, 'true');
+		CatDV.showMessage("Você não aprovou este ativo  " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		addHistory(clip, "Internal approval automatically set to Awaiting approval");
+		addHistory(clip, "produtor approval automatically set to Awaiting approval");
+	}
+
+	else if (approvedID == clienteApprovedID)
+	{
+		clip.set(assetApprovedID, "Awaiting approval");
+		clip.set(produtorApprovedID, "Awaiting approval");
+		clip.set(agenciaApprovedID, "Awaiting approval");
+		clip.put(assetStatusID, "Client Not Approved");
+		clip.set(clienteApprovedID, "Client rejected");
+		clip.set(clienteRejectedID, CatDV.getUserName());
+		clip.set(sendclienteRejectedEmailID, 'true');
+		CatDV.showMessage("Você não aprovou este ativo  " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		addHistory(clip, "Internal approval automatically set to Awaiting approval");
+		addHistory(clip, "produtor approval automatically set to Awaiting approval");
+		addHistory(clip, "agencia approval automatically set to Awaiting approval");
+	}
+
+
+
+	else if (approvedID == deliveryApprovedID)
+	{
+		clip.put(orderStatusID, "Not Approved");
+		clip.put(assetStatusID, "");
+		clip.set(deliveryRejectedID, CatDV.getUserName());
+		clip.set(sendDeliveryRejectedEmailID, 'true');
+		clip.set(deliveryApprovedID, 'Not Approved');
+
+		var deliveryNotes = clip.get(deliveryNotesID);
+	    CatDV.showMessage("You haven't Approved Delivery " + deliveryNotes + "");
+
+	}
+	}
+
+	else
+	{
+
+		if (approvedID == assetApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Internal Approval");
+			clip.put(approvedID, "Awaiting approval");
+		}
+		else if (approvedID == clientApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Client Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(clientRejectedID, "");
+			CatDV.showMessage("You have Not Approved this asset :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		}
+
+		else if (approvedID == producerApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Producer Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(producerRejectedID, "");
+			CatDV.showMessage("You have Not Approved this asset :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		}
+
+		else if (approvedID == agencyApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Agency Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(agencyRejectedID, "");
+			CatDV.showMessage("You have Not Approved this asset :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		}
+
+		else if (approvedID == customerApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Customer Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(customerRejectedID, "");
+			CatDV.showMessage("You have Not Approved this asset :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		}
+
+
+		else if (approvedID == produtorApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting produtor Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(produtorRejectedID, "");
+			CatDV.showMessage("Você não aprovou este ativo :\n\n  " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		}
+
+		else if (approvedID == agenciaApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Agency Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(agenciaRejectedID, "");
+			CatDV.showMessage("Você não aprovou este ativo :\n\n  " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		}
+
+		else if (approvedID == clienteApprovedID)
+		{
+			clip.put(assetStatusID, "Awaiting Client Approval");
+			clip.put(approvedID, "Awaiting approval");
+			clip.set(clienteRejectedID, "");
+			CatDV.showMessage("Você não aprovou este ativo :\n\n  " + clipName + "\n\nPOR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS!");
+		}
+
+
+	    else if (approvedID == deliveryApprovedID)
+		{
+			clip.put(orderStatusID, "Awaiting Approval")
+			clip.put(approvedID, "Awaiting approval");
+			clip.put(assetStatusID, "");
+			clip.put(deliveryRejectedID, "");
+		}
+
+	}
+
+	if (approvedID == clientReviewedID)
+		{
+			CatDV.showMessage("You have Reviewed this asset :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+	 else if (approvedID == qcApprovedID)
+		{
+			CatDV.showMessage("You haven't approved QC for this asset :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+	 else if (approvedID == transcodeApprovedID)
+		{
+			CatDV.showMessage("You haven't approved QC for this transcode :\n\n  " + clipName + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+			return;
+		}
+
+	else if (approvedID == deliveryApprovedID)
+		{
+			var deliveryNotes = clip.get(deliveryNotesID);
+	        CatDV.showMessage("You haven't Approved Delivery " + deliveryNotes + "");
+			return;
+		}
+
+}
+
+
+
+function clearReview()
+{
+	var clip = CatDV.getClip();
+	clip.put(clientReviewID, "");
+}
+
+function clearCancel()
+{
+	var clip = CatDV.getClip();
+	clip.put(deliveryCancelID, "");
+}
+
+function clearRequest()
+{
+	var clip = CatDV.getClip();
+	clip.put(deliveryRequestID, "");
+}
+
+function getDeliveryFilename(name, country) {
+	var countries = {
+	"Argentina" : "AR",
+	"Belize" : "BE",
+	"Brazil" : "BR",
+	"Chile" : "CL",
+	"Colombia" : "CO",
+	"Costa Rica" : "CR",
+	"El Salvador" : "ES",
+	"Export Market" : "EM",
+	"Guatemala" : "GU",
+	"Honduras" : "HO",
+	"Mexico" : "MX",
+	"Nicaragua" : "NI",
+	"Panama" : "PA",
+	"Peru" : "PE",
+	"Puerto Rico" : "PR",
+	"Regional" : "RM",
+	"US" : "US"};
+
+	CatDV.log("Get delivery filename for file [" + name + "], country [" + country + "]");
+	var nameElements = name.split('.');
+	if (nameElements.length < 2)
+		var deliveryName = name + "_" + countries[country];
+	else
+	{
+		var ext = nameElements.pop();
+		var deliveryName = nameElements.join('.') + "_" + countries[country] + "." + ext;
+	}
+
+	return deliveryName;
+}
+
+function calculateDeliveryStatus()
+{
+	var clip = CatDV.getClip();
+	var totalVal = clip.get(totalCost);
+	if (!clip)
+		return;
+	var timestamp = new(Date);
+	var networks = clip.get(deliveryNetworksID);
+	var networksDig = clip.get(deliveryDigitalID);
+	if (!networks || networks === "")
+	{
+
+		if (!networksDig || networksDig === "")
+		{
+			CatDV.log("No networks selected");
+			clearRequest;
+			CatDV.showMessage("You must select a network");
+			return;
+		}
+
+		else
+		{
+
+			var networks = clip.get(deliveryDigitalID);
+			clip.put(deliveryNetworksID, networksDig);
+		}
+	}
+
+	var talent = clip.get(talentandrightsID);
+	if (talent != "In force")
+	{
+		CatDV.log("Talent and Rights expired");
+		clearRequest;
+		CatDV.showMessage("This asset has expired Talent and Rights");
+		return;
+	}
+
+	var deliveryCountry = clip.get(deliveryCountryID);
+	var username = CatDV.getUserName();
+	if (!username)
+	{
+		CatDV.log("Current username not found");
+	 	return;
+	}
+	getUser(username, function(user) {
+		if (!user)
+			return;
+
+	var billingCountry = user.notes;
+
+
+		clip.put(deliveryCountryID, billingCountry);
+
+		CatDV.log("calculateDeliveryStatus for user: " + username + " billing country: " + billingCountry);
+
+		if (!billingCountry)
+		{
+			CatDV.log("User has no billing country set");
+			CatDV.showMessage("No billing country has been set for this user - please contact Lathink");
+			return;
+		}
+		clip.put(deliveryFilenameID, '');
+		clip.put(deliveryFilenameID, getDeliveryFilename(clip.get(clipIsciID), billingCountry));
+		clip.put(requestedStatus, "true");
+		clip.put(clearDeliveryFields, "true");
+		clip.put(deliveryRequestedbyID, CatDV.getUserName());
+		clip.put(deliveryAppDate, timestamp);
+		CatDV.log("Delivery pre-approved for country " + deliveryCountry);
+		clip.put(orderStatusID, "Pre-approved"); //Change to Awaiting approval
+		clip.put(deliveryApprovedID, "Approved"); //Change to Awaiting approval
+		clip.put(deliveryNotesID, "whit total cost $" + totalVal + ".00usd to the following networks:\n\n" + networks + "\n\n PLEASE REMEMBER TO SAVE YOUR CHANGES OR THEY WILL BE LOST");
+
+		CatDV.showMessage("Your Delivery Order has been created, it will cost $" + totalVal + ".00usd to the following networks:\n\n" + networks + "\n\n This order will be processed and delivered to selected networks. \n\n                PLEASE REMEMBER TO SAVE YOUR CHANGES OR THEY WILL BE LOST");
+
+		addHistory(clip, "Requested delivery to the following networks with total cost of $" + totalVal + ".00usd \n" + networks + "Requested by" + deliveryRequestedbyID);
+
+	});
+}
+
+
+
+function validateDeliveryStatus()
+{
+	var clip = CatDV.getClip();
+	//var totalVal = clip.get(totalCost);
+	if (!clip)
+		return;
+
+	var username = CatDV.getUserName();
+	if (!username)
+	{
+		CatDV.log("Current username not found");
+	 	return;
+	}
+
+	getUser(username, function(user) {
+		if (!user)
+			return;
+
+	var billingCountry = user.notes;
+		clip.put(deliveryCountryID, billingCountry);
+		clip.put(permittCountriesID, billingCountry);
+		//var rej = splitString(user);
+	//CatDV.showMessage("Visual  " + billingCountry);
+	var permittedCountry = user.fields[userpermittedconuntriesID];
+		//clip.put(permittCountriesID, permittedCountry);
+
+	checkUserIsParticipant()
+		return;
+	});
+}
+
+
+
+function cancelDelivery()
+{
+	var clip = CatDV.getClip();
+	if (!clip)
+		return;
+	var user = CatDV.getUserName();
+
+	CatDV.log("checkAuthorityCancel for user: " + user);
+
+	var cancelApprovers = splitString(clip.get(deliveryApprovalsID));
+
+	if (cancelApprovers.length > 0)
+	{
+		CatDV.log("Check Cancel Authority: " + cancelApprovers);
+
+		if (cancelApprovers.indexOf(user) < 0)
+		{
+			CatDV.log("User is not an delivery approver");
+			CatDV.showMessage("You are not an delivery approver for this asset and you can not cancel this order.");
+			return true;
+		}
+
+	}
+	if (clip.get(deliveryRequestedbyID) != user)
+		{
+			CatDV.showMessage("You are not create this delivery order and you can not cancel this order");
+			return true;
+		}
+	clip.put(deliveryCancelMoveID, "Yes");
+	clip.put(assetStatusID, "Delivery Not Approved");
+	clip.put(orderStatusID, "Canceled");
+	clearCancel;
+	CatDV.log("User cancel order");
+	CatDV.showMessage("You have cancel this order, this will be moved to Cancel Orders in your Smart Folder. \n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+
+	return true;
+}
+
+
+
+
+function catdv_onLoad(clip)
+{
+	//CatDV.showMessage("Visual");
+
+	validateDeliveryStatus()
+		return;
+
+}
+
+
+
+
+function getBudget()
+{
+	CatDV.showMessage(clip.get(preApprovedCountriesID));
+
+		return true
+
+}
+
+
+
+function catdv_onUpdate(clip, fieldID)
+{
+	if (!enable)
+		return;
+
+
+	if (fieldID == deliveryNetworksID)
+	{
+		var delToArray = splitString(clip.get(fieldID));
+		var numY = delToArray.length
+			clip.put(costPer, '37')
+		var costX = clip.get(costPer)
+			//console.log("Update: ", fieldID, costX, numY); "NOT DEFINED IN RICH CLIENT"
+		var totalZ = costX * numY;
+			clip.put(totalCost, totalZ)
+	}
+
+	if (fieldID == deliveryDigitalID)
+	{
+		var delToArray = splitString(clip.get(fieldID));
+		var numY = delToArray.length
+			clip.put(costPer, '37')
+		var costX = clip.get(costPer)
+			//console.log("Update: ", fieldID, costX, numY); "NOT DEFINED IN RICH CLIENT"
+		var totalZ = costX * numY;
+			clip.put(totalCost, totalZ)
+	}
+	//calculateCost;
+
+
+	else if (fieldID == collabLink)
+		{
+			var contLink = clip.get(collabLink);
+			clip.put(collabLink, '<a href=\"' + contLink + '\" target=\"_blank\">Click here to open.<\/a>');
+		}
+	else if (fieldID == previousLink)
+		{
+			var origLink = clip.get(previousLink);
+			clip.put(previousLink, '<a href="catdv://clip/' + origLink + '">Previous Clip</a>');
+		}
+	else if (fieldID == deliveryProof)
+		{
+			var delivLink = clip.get(deliveryProof);
+			clip.put(deliveyProof, '<a href=\"' + delivLink + '\" target=\"_blank\">Click here to open.<\/a>');
+		}
+	//Update HTML Links when user add target
+}
+
+
+function catdv_onAction(type, fieldID, value)
+{
+
+	var clip = CatDV.getClip();
+	if (!enable)
+		return;
+	CatDV.log("Action ", fieldID, value);
+
+
+	if (fieldID == clientReviewID)
+	{
+
+	    if (!checkAuthority(clientReviewersID))
+			return true;
+
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+
+		if (clip.get(clientApprovedID) == "Approved")
+		{
+			CatDV.showMessage("This asset was previously approved by client, you can't make more changes in this asset.");
+			return true;
+		}
+	       if (value == 'Reviewed')
+		   {
+			addApprover(clientReviewsID, clientReviewersID, clientRejectionsID, clientReviewedID, "Review")
+		   }
+		return true;
+	}
+	else if (fieldID == qcApproveID)
+	{
+		if (!checkAuthority(qcApproversID))
+			return true;
+		if (value == 'Pass')
+		{
+			addApprover(qcApprovalsID, qcApproversID, qcRejectionsID, qcApprovedID, "Quality Control")
+			var deliveryName = clip.get(clipIsciID) + "_YT";
+			clip.put(deliveryFilenameID, deliveryName);
+			clip.put(agencyaccountID, "Alex");
+			clip.put(clearDeliveryFields, "true");
+			clip.put(requestedstatusYTID, "true");
+			clip.put(orderStatusID, "Pre-approved"); //Change to Awaiting approval
+			clip.put(deliveryApprovedID, "Approved"); //Change to Awaiting approval
+			clip.put(deliveryNetworksID, "Regional/YOUTUBE");
+
+		}
+		if (value == 'Fail')
+			removeAllApprovers(qcApprovalsID, qcApproversID, qcRejectionsID, qcApprovedID, "Quality Control");
+		return true;
+	}
+	else if (fieldID == transcodeApproveID)
+	{
+		if (!checkAuthority(transcodeApproversID))
+			return true;
+		if (value == 'Pass')
+			addApprover(transcodeApprovalsID, transcodeApproversID, transcodeRejectionsID, transcodeApprovedID, "Transcode Quality Control")
+		if (value == 'Fail')
+			removeAllApprovers(transcodeApprovalsID, transcodeApproversID, transcodeRejectionsID, transcodeApprovedID, "Transcode Quality Control");
+		return true;
+	}
+	else if (fieldID == approveID)
+	{
+		if (!checkAuthority(assetApproversID))
+			return true;
+		if (clip.get(assetApprovedID) == "Approved" || (assetApprovedID) == "Not Approved")
+		{
+			CatDV.showMessage("This clip was previously internal approved, you can't make more changes in this clip.");
+			return true;
+		}
+		if (value == 'Yes')
+			addApprover(assetApprovalsID, assetApproversID, assetRejectionsID, assetApprovedID, "Internally")
+		if (value == 'No')
+			removeAllApprovers(assetApprovalsID, assetApproversID, assetRejectionsID, assetApprovedID, "Internally");
+			return true;
+	}
+
+	else if (fieldID == clientApproveID)
+	{
+		if (!checkAuthority(clientApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(clientApprovedID) == "Approved" || (clientApprovedID) == "Client rejected")
+		{
+			CatDV.showMessage("This asset was previously approved by client, you can't make more changes in this asset.");
+			return true;
+		}
+		if (value == 'Yes')
+			addApprover(clientApprovalsID, clientApproversID, clientRejectionsID, clientApprovedID, "Externally");
+
+		if (value == 'No')
+			removeAllApprovers(clientApprovalsID, clientApproversID, clientRejectionsID, clientApprovedID, "Externally");
+			return true;
+	}
+
+	else if (fieldID == agencyApproveID)
+	{
+		if (!checkAuthority(agencyApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(agencyApprovedID) == "Approved" || (agencyApprovedID) == "Not Approved")
+		{
+			CatDV.showMessage("This asset was previously approved by agency, you can't make more changes in this asset.");
+			return true;
+		}
+		if (value == 'Yes')
+			addApprover(agencyApprovalsID, agencyApproversID, agencyRejectionsID, agencyApprovedID, "Externally Agency");
+
+		if (value == 'No')
+			removeAllApprovers(agencyApprovalsID, agencyApproversID, agencyRejectionsID, agencyApprovedID, "Externally Agency");
+			return true;
+	}
+
+	else if (fieldID == producerApproveID)
+	{
+		if (!checkAuthority(producerApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(producerApprovedID) == "Approved"  || (producerApprovedID) == "Not Approved")
+		{
+			CatDV.showMessage("This asset was previously approved by producer, you can't make more changes in this asset.");
+			return true;
+		}
+		if (value == 'Yes')
+			addApprover(producerApprovalsID, producerApproversID, producerRejectionsID, producerApprovedID, "Externally Producer");
+
+		if (value == 'No')
+			removeAllApprovers(producerApprovalsID, producerApproversID, producerRejectionsID, producerApprovedID, "Externally Producer");
+			return true;
+	}
+
+
+	else if (fieldID == customerApproveID)
+	{
+		if (!checkAuthority(customerApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(customerApprovedID) == "Approved" || (customerApprovedID) == "customer rejected")
+		{
+			CatDV.showMessage("This asset was previously approved, you can't make more changes in this asset.");
+			return true;
+		}
+		if (value == 'Yes')
+			addApprover(customerApprovalsID, customerApproversID, customerRejectionsID, customerApprovedID, "Externally customer");
+
+		if (value == 'No')
+			removeAllApprovers(customerApprovalsID, customerApproversID, customerRejectionsID, customerApprovedID, "Externally customer");
+			return true;
+	}
+
+
+	else if (fieldID == agenciaApproveID)
+	{
+		if (!checkAuthority(agenciaApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(agenciaApprovedID) == "Approved" || (agenciaApprovedID) == "Not Approved")
+		{
+			CatDV.showMessage("Este ativo foi previamente aprovado pela agência, você não pode fazer mais alterações neste recurso.");
+			return true;
+		}
+		if (value == 'Sim')
+			addApprover(agenciaApprovalsID, agenciaApproversID, agenciaRejectionsID, agenciaApprovedID, "Externally agencia");
+
+		if (value == 'Não')
+			removeAllApprovers(agenciaApprovalsID, agenciaApproversID, agenciaRejectionsID, agenciaApprovedID, "Externally agencia");
+			return true;
+	}
+
+	else if (fieldID == produtorApproveID)
+	{
+		if (!checkAuthority(produtorApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(produtorApprovedID) == "Approved"  || (produtorApprovedID) == "Not Approved")
+		{
+			CatDV.showMessage("Este ativo foi previamente aprovado pelo produtor, você não pode fazer mais alterações neste recurso.");
+			return true;
+		}
+		if (value == 'Sim')
+			addApprover(produtorApprovalsID, produtorApproversID, produtorRejectionsID, produtorApprovedID, "Externally produtor");
+
+		if (value == 'Não')
+			removeAllApprovers(produtorApprovalsID, produtorApproversID, produtorRejectionsID, produtorApprovedID, "Externally produtor");
+			return true;
+	}
+
+
+	else if (fieldID == clienteApproveID)
+	{
+		if (!checkAuthority(clienteApproversID))
+			return true;
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(clienteApprovedID) == "Approved" || (clienteApprovedID) == "cliente rejected")
+		{
+			CatDV.showMessage("Este ativo foi previamente aprovado, você não pode fazer mais alterações neste recurso.");
+			return true;
+		}
+		if (value == 'Sim')
+			CatDV.showMessage("test si");
+			addApprover(clienteApprovalsID, clienteApproversID, clienteRejectionsID, clienteApprovedID, "Externally cliente");
+
+		if (value == 'Não')
+			removeAllApprovers(clienteApprovalsID, clienteApproversID, clienteRejectionsID, clienteApprovedID, "Externally cliente");
+			return true;
+	}
+
+
+
+
+
+	else if (fieldID == aprovacaoEmissoraID)
+	{
+
+
+		if (value == 'Sim')
+		{	CatDV.showMessage("Você aprovou este ativo. \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.");
+	        clip.put(deliveryStatusID, "Approved");
+			clip.put(sendFileRecordtvID, "True");
+			clip.put(sendmailtoteamID, "RECORDTV");
+		    addHistory(clip, "Aprovado y Entregue para o servidor");
+			return true;
+		}
+		if (value == 'Não')
+		{	CatDV.showMessage("Você não aprovou este ativo. \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.");
+	        clip.put(deliveryStatusID, "Rejected");
+			clip.put(observacoesID, "Por favor, escreva as observações de não aprovação do material");
+		    addHistory(clip, "Não Aprovado. Rejeitado pelo emissora");
+		return true;
+		}
+	}
+
+			else if (fieldID == aprovacaoEmissoraCnnID)
+	{
+
+
+		if (value == 'Sim')
+		{	CatDV.showMessage("Você aprovou este ativo. \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.");
+	        clip.put(deliveryStatusID, "Approved");
+			clip.put(sendFileCnnID, "True");
+		    addHistory(clip, "Aprovado y Entregue para o servidor");
+			return true;
+		}
+		if (value == 'Não')
+		{	CatDV.showMessage("Você não aprovou este ativo. \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.");
+	        clip.put(deliveryStatusID, "Rejected");
+			clip.put(sendFileCnnID, "False");
+			clip.put(observacoesID, "Por favor, escreva as observações de não aprovação do material");
+		    addHistory(clip, "Não Aprovado. Rejeitado pelo emissora");
+		return true;
+		}
+	}
+
+
+
+
+
+
+
+	else if (fieldID == uploadYoutubeID)
+	{
+		var timestamp = new(Date);
+		var clipName = clip.get(clipNameID);
+		var temprojectID = clip.get(tempprojectnameID);
+		var user = CatDV.getUserName();
+		CatDV.showMessage("This clip will be uploaded to YouTube Channel.\n\n "  + clipName + "\n\n Project Name :" + temprojectID + "\n\nPLEASE REMEMBER TO SAVE THE CLIP WITH THE BUTTON AT THE BOTTOM RIGHT, OR YOUR CHANGES WILL BE LOST!");
+		clip.put(uploadYoutubeActionID, "true");
+		clip.put(youtubeteamID, user);
+		clip.put(ytPublishDate, timestamp);
+		return true;
+	}
+
+	else if (fieldID == uploadYoutubeBRID)
+	{
+		var timestamp = new(Date);
+		var clipName = clip.get(clipNameID);
+		var temprojectID = clip.get(ProjectNameID);
+		var user = CatDV.getUserName();
+		CatDV.showMessage("Este clipe será enviado para o canal do YouTube. \n\n "+ clipName +" \n\n Nome do projeto: "+ temprojectID +" \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.!");
+		clip.put(uploadYoutubeActionID, "true");
+		clip.put(youtubeteamID, user);
+		clip.put(ytPublishDate, timestamp);
+		return true;
+	}
+
+	else if (fieldID == briefUpdateID)
+	{
+		var clip = CatDV.getClip();
+		if (!clip) return;
+
+		var clipName = clip.get(clipNameID);
+
+		if (value == "Update Brief Fields")
+		{
+			if (clip.get(briefStatusID) == "Brief Done")
+		{
+			CatDV.showMessage("This brief was previously updated, you can't make more changes. If you need please contact at Lathink.");
+			return true;
+		}
+
+		clip.put(briefUpdateFieldID, "true");
+		CatDV.showMessage("You are update brief for this project: \n\n" + clipName + "\n\n PLEASE REMEMBER TO SAVE YOUR CHANGES OR THEY WILL BE LOST");
+		return true;
+		}
+
+	}
+	else if (fieldID == loggingCompleteID)
+	{
+			CatDV.showMessage("You are complete logging process, now this asset pass to QC. \n\n PLEASE REMEMBER TO SAVE YOUR CHANGES OR THEY WILL BE LOST");
+			clip.put(logginStatusID, "Logging Complete");
+                         clip.put(logginApprovedID, "Logging Complete");
+			return true;
+
+	}
+
+		else if (fieldID == reenviaraoservidorID)
+	{
+			CatDV.showMessage("Com esta ação você solicita o reenvio do material ao servidor. \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.");
+			clip.put(deliveryStatusID, "Redelivery");
+			addHistory(clip, "Reenviando para o servidor");
+            //clip.put(logginApprovedID, "Logging Complete");
+			return true;
+
+	}
+
+	else if (fieldID == reenviaraoservidorCnnID)
+	{
+			CatDV.showMessage("Com esta ação você solicita o reenvio do material ao servidor. \n\n POR FAVOR, LEMBRE-SE DE SALVAR O CLIPE COM O BOTÃO NA PARTE INFERIOR, OU SUAS MUDANÇAS SERÃO PERDIDAS.");
+			clip.put(deliveryStatusID, "Redelivery");
+			clip.put(sendFileCnnID, "True");
+			addHistory(clip, "Reenviando para o servidor");
+            //clip.put(logginApprovedID, "Logging Complete");
+			return true;
+
+	}
+
+
+
+	else if (fieldID == recivedID)
+	{
+
+		clip.set(recivedbyID, CatDV.getUserName());
+
+		if (value == "Yes")
+		{
+			CatDV.showMessage("Confirm correct reception of the file sent by Lathink.Livebrary. \n\n PLEASE REMEMBER TO SAVE YOUR CHANGES OR THEY WILL BE LOST");
+			clip.set(deliveryStatusID, "Delivered");
+			clip.set(sendTranscodeApprovedEmailID, "true");
+			return true;
+		}
+		if (value == "No")
+		{
+			CatDV.showMessage("You don't confirm correct reception of the file sent by Lathink.Livebrary, please add your comments in the fields below (Network Feedback ans Network Notes). \n\n PLEASE REMEMBER TO SAVE YOUR CHANGES OR THEY WILL BE LOST");
+			clip.set(deliveryStatusID, "Redelivery");
+			clip.set(sendTranscodeRejectedEmailID, "true");
+			return true;
+		}
+
+	}
+	else if (fieldID == deliveryRequestID)
+	{
+		if (clip.get(checkuserisparticipantID) == "true")
+		{	CatDV.showMessage("Exclusive version for \n\n" + preAutorizedCountries );
+		return true;
+		}
+		if (clip.get(deliveryApprovedID) == "Approved")
+		{
+			CatDV.showMessage("This is an Order, you need to see Ready to Order file in Smart Folder.");
+			return true;
+		}
+		calculateDeliveryStatus();
+	}
+
+
+
+}
